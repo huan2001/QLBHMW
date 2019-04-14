@@ -49,7 +49,7 @@ namespace QLBHWS.Controllers
         {
             ChungLoai chungloaiItem = db.ChungLoais.Find(id);
             ViewBag.TieuDe = $"Sản phẩm của loại hàng:{chungloaiItem.Ten}";
-            List<HangHoa> item = db.HangHoas.Take(6).ToList();
+            List<HangHoa> item = db.HangHoas.Where(p=>p.ChungLoaiID==id).Take(6).ToList();
             ViewBag.HangHoa = item;
             return View("List");
         }
