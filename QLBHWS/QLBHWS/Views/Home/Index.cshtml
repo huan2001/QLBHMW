@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Trang chủ";
+    Layout = "~/Views/Shared/_QLBanHangLayout.cshtml";
+}
+
+@Html.Partial("_MainsilderPartial")
+@Html.Action("_HotThisWeekPartial","HangHoa")
+@section FooterBar{
+    @* Tích hợp Footer partil vào*@
+    @Html.Partial("_FooterPartial")
+}

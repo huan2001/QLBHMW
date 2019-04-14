@@ -1,0 +1,12 @@
+﻿@model System.String
+@{
+    Layout = "~/Views/Shared/_QLBanHangLayout.cshtml";
+}
+
+
+<div class="container">
+    <div class="box text-danger" >
+        <h2>Thông báo lỗi</h2>
+        <h4>@Html.Raw(Model)</h4>
+    </div>
+</div>

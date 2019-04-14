@@ -1,0 +1,23 @@
+﻿@model List<QLBHWS.Models.ChungLoai>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Danh sách chủng loại</title>
+</head>
+<body>
+    <div> 
+        <ol>
+            @foreach (var item in Model)
+            {
+                <li> @item.MaSo - @item.Ten</li>
+            }
+        </ol>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_QLBanHangLayout.cshtml";
+    var hangHoaItems = ViewBag.HangHoa as List<HangHoa>;
+}
+
+<div class="container">
+    <div class="col-lg-9">
+        <div class="box">
+            <h2>@ViewBag.TieuDe</h2>
+        </div>
+        <div class="row products">
+            @foreach (var item in hangHoaItems)
+            {
+                <div class="col-md-4 col-sm-6">
+                    <div class="product">
+                        <div class="flip-container">
+                            <div class="flipper">
+                                <div class="front">
+                                    <a href="@Url.Action("ChiTiet", "HangHoa", new { id = item.ID })">
+                                        <img src="~/Photos/@item.Hinhs[0]" alt="" class="img-responsive" style="height:200px">
+                                    </a>
+                                </div>
+                                <div class="back">
+                                    <a href="@Url.Action("ChiTiet", "HangHoa", new { id = item.ID })">
+                                        @{
+                                            string hinh2 = item.Hinhs.Count > 1 ? item.Hinhs[1] : item.Hinhs[0];
+                                        }
+                                        <img src="~/Photos/@hinh2" alt="" class="img-responsive" style="height:200px">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="@Url.Action("ChiTiet","HangHoa",new { id=item.ID })" class="invisible">
+                            <img src="~/Photos/@item.Hinhs[0]" alt="" class="img-responsive" style="height:200px">
+                        </a>
+                        <div class="text">
+                            <h3>@Html.ActionLink(item.Ten, "ChiTiet", "HangHoa", new { id = item.ID }, null)</h3>
+                            <p class="price">@item.GiaBan.ToString("#,##0 VNĐ")</p>
+                            <p class="buttons">
+                                <a href="@Url.Action("ChiTiet", "HangHoa", new { id = item.ID })" class="btn btn-default">Xem chi tiết</a>
+                                <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                            </p>
+                        </div>
+                        <!-- /.text -->
+                    </div>
+                    <!-- /.product -->
+                </div>
+
+            }
+
+
+        </div>
+    </div>
+    <div class="col-lg-3">
+        @Html.Action("_ChungLoai1Partial", "ChungLoai");
+    </div>
+</div>
+
