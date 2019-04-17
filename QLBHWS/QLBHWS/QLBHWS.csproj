@@ -188,6 +188,7 @@
     <Compile Include="Models\ChungLoai.cs">
       <DependentUpon>QLBanHang2.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ChungLoaiViewModels.cs" />
     <Compile Include="Models\HangHoa.cs">
       <DependentUpon>QLBanHang2.tt</DependentUpon>
     </Compile>
@@ -482,6 +483,8 @@
     <Content Include="Views\HangHoa\ChiTiet.cshtml" />
     <Content Include="Views\Shared\BaoLoi.cshtml" />
     <Content Include="Views\HangHoa\List.cshtml" />
+    <Content Include="Views\ChungLoai\_ChungLoai2Partial.cshtml" />
+    <Content Include="Views\Shared\_SearchPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
