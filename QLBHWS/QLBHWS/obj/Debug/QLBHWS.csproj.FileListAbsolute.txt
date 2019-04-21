@@ -328,3 +328,7 @@ E:\vs\buoi 6\QLBHMW\QLBHWS\QLBHWS\obj\Debug\QLBHWS.csproj.CopyComplete
 E:\vs\buoi 6\QLBHMW\QLBHWS\QLBHWS\obj\Debug\QLBHWS.dll
 E:\vs\buoi 6\QLBHMW\QLBHWS\QLBHWS\obj\Debug\QLBHWS.pdb
 >>>>>>> 162de87299d8963f0470bb1a7aa43d8da3de934d
+C:\Users\Narhuynh\Documents\QLBHMW\QLBHWS\QLBHWS\bin\PagedList.dll
+C:\Users\Narhuynh\Documents\QLBHMW\QLBHWS\QLBHWS\bin\PagedList.Mvc.dll
+C:\Users\Narhuynh\Documents\QLBHMW\QLBHWS\QLBHWS\bin\PagedList.xml
+C:\Users\Narhuynh\Documents\QLBHMW\QLBHWS\QLBHWS\bin\PagedList.Mvc.xml

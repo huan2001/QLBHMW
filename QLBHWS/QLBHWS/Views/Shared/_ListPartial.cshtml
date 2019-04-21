@@ -1,0 +1,56 @@
+﻿
+<div>
+    @{ var pageOfData = (IPagedList)Model; }
+    Trang:@pageOfData.PageNumber/@pageOfData.PageCpunt
+    Tổng số mặt hàng: @pageOfData.TotalItemCount
+</div>
+
+<div class="text-center">
+    @Html.PageedListPager(pageOfData, pageOfData => Url.Action("List", new { Page = p })),
+    pagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(new AjaxOptions
+    {
+    UpdateTargetId= "spContainerUpdate",
+    InsertionMode = InsertionMode,Replace,
+    HttpMethod="Get"
+    })
+
+</div>
+@foreach (HangHoa item in Model)
+{
+    <div class="col-md-4 col-sm-6">
+        <div class="product">
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <a href="@Url.Action("ChiTiet", "HangHoa", new { id = item.ID })">
+                            <img src="~/Photos/@item.Hinhs[0]" alt="" class="img-responsive" style="height:200px">
+                        </a>
+                    </div>
+                    <div class="back">
+                        <a href="@Url.Action("ChiTiet", "HangHoa", new { id = item.ID })">
+                            @{
+                                string hinh2 = item.Hinhs.Count > 1 ? item.Hinhs[1] : item.Hinhs[0];
+                            }
+                            <img src="~/Photos/@hinh2" alt="" class="img-responsive" style="height:200px">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="@Url.Action("ChiTiet","HangHoa",new { id=item.ID })" class="invisible">
+                <img src="~/Photos/@item.Hinhs[0]" alt="" class="img-responsive" style="height:200px">
+            </a>
+            <div class="text">
+                <h3>@Html.ActionLink(item.Ten, "ChiTiet", "HangHoa", new { id = item.ID }, null)</h3>
+                <p class="price">@item.GiaBan.ToString("#,##0 VNĐ")</p>
+                <p class="buttons">
+                    <a href="@Url.Action("ChiTiet", "HangHoa", new { id = item.ID })" class="btn btn-default">Xem chi tiết</a>
+                    <a href="basket.html" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                </p>
+            </div>
+            <!-- /.text -->
+        </div>
+        <!-- /.product -->
+    </div>
+
+}
