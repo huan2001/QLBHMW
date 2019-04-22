@@ -43,6 +43,7 @@ namespace QLBHWS.Controllers
         {
             List<HangHoa> item = db.HangHoas.Take(6).ToList();
             ViewBag.HangHoa = item;
+            ViewBag.HangHoaAct = "active";
             return View("List");
         }
         public ViewResult TraCuuTheoChungLoai(int? id)
@@ -51,6 +52,23 @@ namespace QLBHWS.Controllers
             ViewBag.TieuDe = $"Sản phẩm của loại hàng:{chungloaiItem.Ten}";
             List<HangHoa> item = db.HangHoas.Where(p=>p.ChungLoaiID==id).Take(6).ToList();
             ViewBag.HangHoa = item;
+            TempData["CLID"] = id;
+            return View("List");
+        }
+        public ViewResult TraCuuTheoTen(string Ten)
+        {
+            
+            
+            List<HangHoa> item = db.HangHoas.Where(p => p.Ten.Contains(Ten)).ToList();
+            ViewBag.HangHoa = item;
+            if (item!=null)
+            {
+                ViewBag.TieuDe = $"Các Sản phẩm tìm được với:<span class='info'> {Ten}</span> ({item.Count} mặt hàng)";
+            }
+            else
+            {
+                ViewBag.TieuDe = $"không tìm thấy mặt hàng có tên:<span class='info'> {Ten}</span> ({item.Count} mặt hàng)";
+            }
             return View("List");
         }
     }

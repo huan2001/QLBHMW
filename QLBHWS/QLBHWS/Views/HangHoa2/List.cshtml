@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_QLBanHangLayout.cshtml";
+}
+
+<div class="container">
+    <div class="col-lg-9">
+        <div class="box">
+            <h2>@Html.Raw(ViewBag.TieuDe)</h2>
+        </div>
+        <div class="row products" id="spContainerUpdate">
+            @Html.Partial("_listPartial")
+
+        </div>
+    </div>
+    <div class="col-lg-3">
+        @Html.Action("_ChungLoai2Partial", "ChungLoai");
+    </div>
+</div>
+@section Scripts{
+    <script src="~/Sc1ripts/jquery.unobtrusive-ajax.min.js"></script>
+}
+

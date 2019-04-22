@@ -19,5 +19,12 @@ namespace QLBHWS.Controllers
             ViewBag.TieuDe = "Danh sách sản phẩm";
             return PartialView();
         }
+        public PartialViewResult _ChungLoai2Partial()
+        {
+            var item = db.ChungLoais.Select(p=>new ChungLoaiViewModels{ ID= p.ID,Ten=p.Ten,SoMatHang=p.HangHoas.Count}).ToList();
+            ViewBag.ChungLoais = item;
+            ViewBag.TieuDe = "Danh sách sản phẩm";
+            return PartialView();
+        }
     }
 }

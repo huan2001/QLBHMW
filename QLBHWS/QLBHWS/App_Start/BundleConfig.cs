@@ -25,6 +25,24 @@ namespace QLBHWS
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+
+            //-------------------------------Obaju------------------------------
+            bundles.Add(new StyleBundle("~/obaju/css").Include(
+                     "~/obajuStyle/css/bootstrap.min.css",
+                     "~/obajuStyle/css/animate.min.css",
+                     "~/obajuStyle/css/owl.carousel.css",
+                     "~/obajuStyle/css/owl.theme.css",
+                     "~/obajuStyle/css/style.default.css"));
+
+            bundles.Add(new StyleBundle("~/Content/js").Include(
+                      "~/obajuStyle/js/bootstrap.min.js",
+                      "~/obajuStyle/js/jquery.cookie.js",
+                      "~/obajuStyle/js/waypoints.min.js",
+                      "~/obajuStyle/js/modernizr.js",
+                      "~/obajuStyle/js/bootstrap-hover-dropdown.js",
+                      "~/obajuStyle/js/owl.carousel.min.js",
+                      "~/obajuStyle/js/front.js"));
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

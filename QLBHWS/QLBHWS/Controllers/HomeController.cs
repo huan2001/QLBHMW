@@ -10,6 +10,7 @@ namespace QLBHWS.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.TrangChuAct = "active";
             return View();
         }
 
